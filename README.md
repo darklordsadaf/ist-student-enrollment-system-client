@@ -1,3 +1,3 @@
 IST Student Enrollment System
 
-A fullstack Website which is build with React.js, Express.js and MongoDB
+A Fullstack Website which is build with React.js, Express.js and MongoDB
