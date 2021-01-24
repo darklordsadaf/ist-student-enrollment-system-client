@@ -16,7 +16,7 @@ const Navbar = () => {
         setLoggedInUser({})
     }
     if (loggedInUser.email) {
-        fetch('http://localhost:5000/adminName', {
+        fetch('https://enigmatic-wildwood-13681.herokuapp.com/adminName', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })

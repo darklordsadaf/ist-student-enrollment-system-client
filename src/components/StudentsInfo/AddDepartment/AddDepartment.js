@@ -26,7 +26,7 @@ const AddDepartment = () => {
         formData.append('file', file);
         formData.append('department', data.department);
 
-        fetch('http://localhost:5000/addDepartment', {
+        fetch('https://enigmatic-wildwood-13681.herokuapp.com/addDepartment', {
             method: 'POST',
             body: formData
         })

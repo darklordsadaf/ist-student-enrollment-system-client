@@ -27,7 +27,7 @@ const UpdateStudent = ({ modalIsOpen, closeModal, student }) => {
 
     function MyComponent2() {
         useEffect(() => {
-            fetch('http://localhost:5000/departments')
+            fetch('https://enigmatic-wildwood-13681.herokuapp.com/departments')
                 .then(res => res.json())
                 .then(data => {
                     if (data) {
@@ -47,7 +47,7 @@ const UpdateStudent = ({ modalIsOpen, closeModal, student }) => {
     }
 
     const onSubmit = data => {
-        fetch(`http://localhost:5000/update/${student._id}`, {
+        fetch(`https://enigmatic-wildwood-13681.herokuapp.com/update/${student._id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)

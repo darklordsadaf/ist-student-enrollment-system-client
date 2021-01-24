@@ -16,7 +16,7 @@ const StudentByDepartment = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/studentsByDept/${department}/`, {
+        fetch(`https://enigmatic-wildwood-13681.herokuapp.com/studentsByDept/${department}/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ department: department })
@@ -38,7 +38,7 @@ const StudentByDepartment = () => {
 
     const onSubmit = data => {
         setStudents([]);
-        fetch('http://localhost:5000/studentsByRoll', {
+        fetch('https://enigmatic-wildwood-13681.herokuapp.com/studentsByRoll', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ roll: data.Roll })

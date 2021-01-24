@@ -14,7 +14,7 @@ const Sidebar = () => {
 
     function MyComponent2() {
         useEffect(() => {
-            fetch('http://localhost:5000/departments')
+            fetch('https://enigmatic-wildwood-13681.herokuapp.com/departments')
                 .then(res => res.json())
                 .then(data => {
                     if (data) {

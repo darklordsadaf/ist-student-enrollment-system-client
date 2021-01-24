@@ -36,7 +36,7 @@ const EnrollStudent = () => {
         formData.append('email', data.email);
         formData.append('mobile', data.mobile);
         formData.append('department', data.department);
-        fetch('http://localhost:5000/addStudent', {
+        fetch('https://enigmatic-wildwood-13681.herokuapp.com/addStudent', {
             method: 'POST',
             body: formData
         })
@@ -64,7 +64,7 @@ const EnrollStudent = () => {
 
     function MyComponent2() {
         useEffect(() => {
-            fetch('http://localhost:5000/departments')
+            fetch('https://enigmatic-wildwood-13681.herokuapp.com/departments')
                 .then(res => res.json())
                 .then(data => {
                     if (data) {

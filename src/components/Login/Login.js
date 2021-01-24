@@ -150,7 +150,7 @@ const Login = () => {
                     admin.email = currentUser.email.toLowerCase();
 
                     if (result) {
-                        fetch('http://localhost:5000/addAdminName', {
+                        fetch('https://enigmatic-wildwood-13681.herokuapp.com/addAdminName', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(admin)

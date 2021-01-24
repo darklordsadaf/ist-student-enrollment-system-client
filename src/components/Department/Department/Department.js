@@ -19,7 +19,7 @@ const Department = () => {
 
     function MyComponent2() {
         useEffect(() => {
-            fetch('http://localhost:5000/departments')
+            fetch('https://enigmatic-wildwood-13681.herokuapp.com/departments')
                 .then(res => res.json())
                 .then(data => {
                     if (data) {
@@ -45,7 +45,7 @@ const Department = () => {
     }
     function MyComponent4() {
         useEffect(() => {
-            fetch('http://localhost:5000/isAdmin', {
+            fetch('https://enigmatic-wildwood-13681.herokuapp.com/isAdmin', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify({ email: loggedInUser.email })

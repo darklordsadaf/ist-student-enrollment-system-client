@@ -22,7 +22,7 @@ const StudentProfile = () => {
         setIsOpen(false);
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/students/${department}/${roll}`)
+        fetch(`https://enigmatic-wildwood-13681.herokuapp.com/students/${department}/${roll}`)
             .then(res => res.json())
             .then(data => {
                 setStudent(data);
@@ -30,7 +30,7 @@ const StudentProfile = () => {
             })
     }, [roll, department])
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://enigmatic-wildwood-13681.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
