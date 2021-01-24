@@ -1,0 +1,23 @@
+.header-container{
+    height: 100vh;
+    background-color:  #F0FFF0;
+}
+.color-yellow{
+  color: #FB9937;
+}
+.screen-body {
+    display: flex;
+}
+.screen-body-item {
+    flex: 1;
+    padding: 50px;
+}
+.screen-body-item.left {
+    display: flex;
+    flex-direction: column;
+  
+}
+.app-title {
+    border-left: 7px solid #FB9937;
+    padding-left: 30px;
+}

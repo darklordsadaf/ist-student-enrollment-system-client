@@ -1,0 +1,38 @@
+  
+.sidebar{
+    position: fixed;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.sidebar li{
+    margin-bottom: 2em;
+}
+span{
+    color: black;
+}
+.sidebar span:hover{
+    
+    color:#FB9937;
+    text-decoration-line:none;
+    
+}
+.sidebar Link:hover{
+    
+    color:#FB9937;
+    text-decoration-line:none;
+    
+}
+
+.subMenu small{
+    color: #DC3545;
+}
+.subMenu small:hover{
+    
+    color:#FB9937;
+    
+}
+
+    
+.sidebar svg{
+    margin-right: 5px;
+}
