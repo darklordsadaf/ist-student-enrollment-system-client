@@ -55,7 +55,7 @@ const StudentsInfo = () => {
                             <div className="col-md-2">
                                 <Sidebar></Sidebar>
                             </div>
-                            <div style={{ backgroundColor: '#F4F7FC', height: '90vh' }} className="col-md-10 pt-4">
+                            <div style={{ backgroundColor: '#F4F7FC' }} className="col-md-10 pt-4 min-vh-100 ">
                                 <div className="col-md-12">
                                     <div className="pr-5">
                                         <form style={{ width: '300px', position: 'absolute', right: '0' }} className=" d-flex" onSubmit={handleSubmit(onSubmit)}>

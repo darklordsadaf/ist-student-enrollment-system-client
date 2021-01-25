@@ -56,18 +56,18 @@ const StudentProfile = () => {
                             <div className="col-md-2">
                                 <Sidebar></Sidebar>
                             </div>
-                            <div style={{ backgroundColor: '#F4F7FC', height: '87vh' }} className="col-md-10 pt-4">
+                            <div style={{ backgroundColor: '#F4F7FC' }} className="col-md-10 pt-4 vh-100">
                                 <div className="col-md-12">
                                     <h2 style={{ color: '#FB9937' }} className="text-center">Student's Profile</h2>
                                     <div class="cat-underline"></div>
                                     <div className="mt-4">
                                         {
                                             student.name ? <div className="row pt-2 ">
-                                                <div className="col-md-6 pl-5 ml-5">
+                                                <div className="col-md-5 pl-5 ml-5">
                                                     <img className=" mx-auto d-block" style={{ borderRadius: "50%" }} width="335" height="335" src={`data:image/png;base64,${student.image.img}`} alt="" />
                                                     <h2 style={{ color: '#111430' }} className="text-uppercase text-center mt-3">{student.name}</h2>
                                                 </div>
-                                                <div className="col-md-5  mt-4">
+                                                <div className="col-md-6 mt-4">
                                                     <h3><span style={{ color: '#7BB35A' }}>Roll No:</span> {student.roll
                                                     }</h3>
                                                     <br />

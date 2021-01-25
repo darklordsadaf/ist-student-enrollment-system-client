@@ -56,7 +56,7 @@ const AddDepartment = () => {
                             <div className="col-md-2">
                                 <Sidebar></Sidebar>
                             </div>
-                            <div style={{ backgroundColor: '#F4F7FC', height: '90vh' }} className="col-md-10 pt-4">
+                            <div style={{ backgroundColor: '#F4F7FC' }} className="col-md-10 pt-4 min-vh-100">
                                 <div className="col-md-12 row">
                                     {
                                         loading === true ? <img className="rounded mx-auto mt-5 d-block " style={{ width: '40%', height: '40%' }} src="https://i.gifer.com/YCZH.gif" alt="" />
