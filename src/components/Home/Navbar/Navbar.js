@@ -27,9 +27,13 @@ const Navbar = () => {
                 localStorage.setItem('adminName', JSON.stringify(data[0].name));
             })
     }
+    const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+    const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
     return (
-        <div>
+        <div >
+
             <nav className="navbar navbar-expand-lg navbar-light">
 
                 <div className="row">
@@ -43,11 +47,11 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                <button onClick={handleNavCollapse} class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded={!isNavCollapsed ? true : false} aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className=" navbar-nav ml-auto mr-5">
 
                         <li className="nav-item ">

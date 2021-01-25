@@ -40,7 +40,7 @@ const Sidebar = () => {
                     <Link onClick={() => { window.location.href = "/student/allstudent" }} style={{ textDecoration: 'none' }} to="/student/allstudent" className="">
                         <span><FontAwesomeIcon icon={faUserGraduate} /> All Student</span>
                     </Link>
-                    <div className="mt-2">
+                    <div className="">
 
                         <li className="subMenu">
                             {

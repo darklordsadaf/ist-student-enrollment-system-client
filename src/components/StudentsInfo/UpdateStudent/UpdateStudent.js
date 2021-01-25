@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 const customStyles = {
     content: {
-        top: '50%',
+        top: '55%',
         left: '50%',
         right: 'auto',
         bottom: 'auto',
@@ -69,8 +69,15 @@ const UpdateStudent = ({ modalIsOpen, closeModal, student }) => {
             style={customStyles}
             contentLabel="Example Modal"
         >
+            <div className="d-flex justify-content-end">
+                <button type="button" onClick={() => closeModal()} class="close" aria-label="Close">
+                    <span style={{ color: 'red' }} aria-hidden="true">x</span>
+                </button>
 
-            <h4 style={{ color: '#7BB35A' }} className="text-center text-brand">Update Info</h4>
+
+            </div>
+
+            <h4 style={{ color: '#7BB35A' }} className="text-center text-brand">Update Info </h4>
             <form className="p-2" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                     <label for="">Student's Name:</label>
