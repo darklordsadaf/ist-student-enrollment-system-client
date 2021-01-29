@@ -30,6 +30,12 @@
 </head>
 
 <body>
+  <script>
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    }; 
+  </script>
+
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <!--

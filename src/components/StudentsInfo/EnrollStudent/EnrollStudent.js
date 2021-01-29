@@ -43,9 +43,9 @@ const EnrollStudent = () => {
             .then(data => {
                 if (data) {
                     setLoading(false);
+                    localStorage.removeItem("student");
                     window.location.reload();
                 }
-
                 window.alert('Student added successfully');
             })
 

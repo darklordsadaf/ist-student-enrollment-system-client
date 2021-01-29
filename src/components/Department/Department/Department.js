@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../../images/ICON/ist.png';
 import { UserContext } from '../../../App';
 import Unauthorized from '../../NotAccess/Unauthorized/Unauthorized';
+import './Department.css';
 
 
 const Department = () => {
@@ -74,9 +75,10 @@ const Department = () => {
 
                         </div>
                     </Link>
-                    <h2 className="text-center mb-5">All <span className="text-yellow">Department</span> </h2>
+                    <h2 className="text-center">All <span className="text-yellow">Department</span> </h2>
+                    <div class="department-underline mb-2"></div>
                     {
-                        dept.length === 0 && <img className="rounded mx-auto d-block mt-4 pt-3" style={{}} src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="" />
+                        dept.length === 0 && <img className="rounded mx-auto d-block mt-4 pt-3" src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="" />
                     }
                     <div className="row">
 

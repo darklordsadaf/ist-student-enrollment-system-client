@@ -56,6 +56,7 @@ const UpdateStudent = ({ modalIsOpen, closeModal, student }) => {
             .then(data => {
                 if (data) {
                     closeModal();
+                    localStorage.removeItem("student");
                     history.goBack()
                     alert("Updated Successfully");
                 }
@@ -71,7 +72,7 @@ const UpdateStudent = ({ modalIsOpen, closeModal, student }) => {
         >
             <div className="d-flex justify-content-end">
                 <button type="button" onClick={() => closeModal()} class="close" aria-label="Close">
-                    <span style={{ color: 'red' }} aria-hidden="true">x</span>
+                    <span style={{ color: 'gray' }} aria-hidden="true">&times;</span>
                 </button>
 
 

@@ -25,6 +25,7 @@ const StudentProfile = () => {
         fetch(`https://enigmatic-wildwood-13681.herokuapp.com/students/${department}/${roll}`)
             .then(res => res.json())
             .then(data => {
+                window.scrollTo(0, 0);
                 setStudent(data);
                 setLoading(false);
             })
@@ -35,6 +36,7 @@ const StudentProfile = () => {
         })
             .then(res => res.json())
             .then(result => {
+                localStorage.removeItem("student");
                 alert('Deleted')
                 if (result) {
                     history.goBack()
@@ -59,7 +61,7 @@ const StudentProfile = () => {
                             <div style={{ backgroundColor: '#F4F7FC' }} className="col-md-10 pt-4 vh-100">
                                 <div className="col-md-12">
                                     <h2 style={{ color: '#FB9937' }} className="text-center">Student's Profile</h2>
-                                    <div class="cat-underline"></div>
+                                    <div class="profile-underline"></div>
                                     <div className="mt-4">
                                         {
                                             student.name ? <div className="row pt-2 ">

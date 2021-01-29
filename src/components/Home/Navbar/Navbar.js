@@ -9,10 +9,7 @@ const Navbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [adminName, setAdminName] = useState([]);
     const logout = () => {
-        localStorage.removeItem("user");
-        localStorage.removeItem("adminName");
-        localStorage.removeItem("dept");
-        localStorage.removeItem("admin");
+        localStorage.clear();
         setLoggedInUser({})
     }
     if (loggedInUser.email) {

@@ -36,6 +36,7 @@ const StudentByDepartment = () => {
     }, [department])
 
 
+
     const onSubmit = data => {
         setStudents([]);
         fetch('https://enigmatic-wildwood-13681.herokuapp.com/studentsByRoll', {
@@ -88,7 +89,6 @@ const StudentByDepartment = () => {
                                 <br />
                                 <br />
                                 <div >
-
                                     {rollNF === true ? <h1 style={{ color: '#DC3545' }} className="text-center mt-5">Student's Data Not Found</h1>
                                         : <AllStudentsData key={students._id} department={department} dept={dept} students={students}></AllStudentsData>}
 

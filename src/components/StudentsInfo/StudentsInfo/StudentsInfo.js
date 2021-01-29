@@ -35,13 +35,35 @@ const StudentsInfo = () => {
 
     }
 
-    useEffect(() => {
-        fetch('https://enigmatic-wildwood-13681.herokuapp.com/students')
-            .then(res => res.json())
-            .then(data => {
-                setStudents(data);
-            })
-    }, [])
+
+    function MyComponent() {
+        useEffect(() => {
+            setStudents(JSON.parse(localStorage.getItem("student")) || {});
+        }, [])
+    }
+
+    function MyComponent2() {
+        useEffect(() => {
+            fetch('https://enigmatic-wildwood-13681.herokuapp.com/students')
+                .then(res => res.json())
+                .then(data => {
+                    if (data) {
+                        localStorage.setItem('student', JSON.stringify(data));
+
+                    }
+
+                    setStudents(data);
+                })
+        }, [])
+    }
+
+
+    if (localStorage.getItem("student")) {
+        MyComponent();
+    }
+    else {
+        MyComponent2()
+    }
     useEffect(() => {
         setIsAdmin(JSON.parse(localStorage.getItem("admin")) || {});
     }, [])
