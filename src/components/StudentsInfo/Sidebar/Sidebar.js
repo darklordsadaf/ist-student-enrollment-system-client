@@ -50,7 +50,7 @@ const Sidebar = () => {
                             {
 
                                 dept.map(department => <Link onClick={() => { window.location.href = `/students/allstudent/${department.department}` }} style={{ textDecoration: 'none' }} key={department._id} to={`/students/allstudent/${department.department}`} className="subMenu">
-                                    <small style={{ display: "block" }}><FontAwesomeIcon icon={faCircle} />{department.department}</small>
+                                    <small style={{ display: "block", marginBottom: "2px" }}><FontAwesomeIcon icon={faCircle} />{department.department}</small>
                                 </Link>)
                             }
                             {/* <Link style={{ textDecoration: 'none' }} to="/student/allstudent" className="subMenu">

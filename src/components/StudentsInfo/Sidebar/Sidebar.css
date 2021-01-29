@@ -1,11 +1,9 @@
-  
-.sidebar{
+  .sidebar{
     position: fixed;
-    /* margin-left: 30px; */
-    /* margin-top: -35px; */
+    
 }
 .sidebar li{
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
 }
 span{
     color: black;
@@ -16,15 +14,9 @@ span{
     text-decoration-line:none;
     
 }
-.sidebar Link:hover{
-    
-    color:#FB9937;
-    text-decoration-line:none;
-    
-}
 
 .subMenu small{
-    color: #DC3545;
+    color: #7AB259;
 }
 .subMenu small:hover{
     

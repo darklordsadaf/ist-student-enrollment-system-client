@@ -14,7 +14,9 @@ const HeaderMain = () => {
         <div className="">
             <main style={{ height: 'auto' }} className="d-flex align-items-center">
                 <div className="col-md-4 offset-md-1 ">
-                    <div >
+                    <div className="d-flex">
+
+                        <div class="title-bar "></div>
                         <div className="app-title">
                             <div className="animated infinite pulse">
                                 <h1 style={{ color: '#111430' }}><b>IST<br />Student Enrollment <br />System</b></h1>

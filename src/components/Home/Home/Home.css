@@ -1,5 +1,4 @@
 .header-container{
-    /* height: 100vh; */
     background-color:  #F0FFF0;
 }
 .color-yellow{
@@ -18,6 +17,12 @@
   
 }
 .app-title {
-    border-left: 7px solid #FB9937;
-    padding-left: 30px;
+    padding-left: 25px;
+}
+.title-bar{
+    margin: auto 0;
+    width: 6px;
+    height: 150px ;
+    background-color: #F79B3D;
+    border-radius: 500px;
 }
