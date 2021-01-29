@@ -11,8 +11,8 @@ const HeaderMain = () => {
         history.push("/department");
     };
     return (
-        <div>
-            <main style={{ height: 'auto' }} className="row d-flex align-items-center">
+        <div className="">
+            <main style={{ height: 'auto' }} className="d-flex align-items-center">
                 <div className="col-md-4 offset-md-1 ">
                     <div >
                         <div className="app-title">

@@ -19,7 +19,7 @@ const Header = () => {
     }, [loggedInUser.email])
     return (
         <div style={{ position: 'sticky', top: '0', background: 'white', zIndex: '1' }}>
-            <section className='row'>
+            <section className='d-flex'>
                 <div className="col-md-2 mt-3">
                     <Link className="d-flex justify-content-center align-items-center" to="/">
                         <img style={{ width: "", height: "90px" }} src={logo} alt="" />
