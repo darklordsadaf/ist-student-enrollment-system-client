@@ -9,6 +9,7 @@ const MakeAdmin = () => {
     const [loading, setLoading] = useState(false);
 
     const { register, handleSubmit, errors } = useForm();
+    document.title = "Make Admin";
     const onSubmit = data => {
         if (data) {
             setLoading(true);

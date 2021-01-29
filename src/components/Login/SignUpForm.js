@@ -3,7 +3,7 @@ import React from "react";
 const SignUpForm = (props) => {
     const { toggleUser, validation, submit, errors } = props;
     console.log(errors);
-
+    document.title = "Create an account";
 
     return (
         <div className="loginPage-form login signup">

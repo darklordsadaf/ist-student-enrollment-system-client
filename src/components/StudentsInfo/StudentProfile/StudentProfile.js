@@ -8,11 +8,13 @@ import './StudentProfile.css';
 
 const StudentProfile = () => {
     const { roll, department } = useParams();
+
     let history = useHistory();
     const [isAdmin, setIsAdmin] = useState(false);
     const [student, setStudent] = useState({});
     const [loading, setLoading] = useState(true);
     const [modalIsOpen, setIsOpen] = useState(false);
+    document.title = `${department} # ${roll}`;
     function openModal() {
         setIsOpen(true);
     }

@@ -10,7 +10,7 @@ const StudentsInfo = () => {
     const [students, setStudents] = useState([]);
     const [rollNF, setRollNF] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
-
+    document.title = "All Student";
 
     const onSubmit = data => {
         setStudents([]);

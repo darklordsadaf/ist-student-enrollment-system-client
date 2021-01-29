@@ -10,7 +10,7 @@ const EnrollStudent = () => {
     const [file, setFile] = useState(null);
     const [loading, setLoading] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
-
+    document.title = "Enroll A Student";
 
 
     const handleFileChange = (e) => {

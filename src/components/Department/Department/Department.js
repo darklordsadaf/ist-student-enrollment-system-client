@@ -8,6 +8,7 @@ import './Department.css';
 
 
 const Department = () => {
+    document.title = "Department";
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
     const [dept, setDept] = useState([]);

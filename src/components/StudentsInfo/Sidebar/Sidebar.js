@@ -1,11 +1,18 @@
-import { faUserPlus, faUserCog, faPlus, faUserGraduate, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus, faUserCog, faPlus, faUserGraduate, faCircle, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import './Sidebar.css';
 
 const Sidebar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [dept, setDept] = useState([]);
+    const logout = () => {
+        window.location.assign("/");
+        localStorage.clear();
+        setLoggedInUser({})
+    }
     function MyComponent() {
         useEffect(() => {
             setDept(JSON.parse(localStorage.getItem("dept")) || {});
@@ -53,38 +60,29 @@ const Sidebar = () => {
                                     <small style={{ display: "block", marginBottom: "2px" }}><FontAwesomeIcon icon={faCircle} />{department.department}</small>
                                 </Link>)
                             }
-                            {/* <Link style={{ textDecoration: 'none' }} to="/student/allstudent" className="subMenu">
-                                <small style={{ display: "block", color: '#FB9937' }}><FontAwesomeIcon icon={faCircle} />CSE</small>
-                            </Link>
-                            <Link style={{ textDecoration: 'none' }} to="/student/allstudent" className="">
-                                <small style={{ display: "block", color: '#FB9937' }}><FontAwesomeIcon icon={faCircle} />BBA</small>
-                            </Link>
-                            <Link style={{ textDecoration: 'none' }} to="/student/allstudent" className="">
-                                <small style={{ display: "block", color: '#FB9937' }}><FontAwesomeIcon icon={faCircle} />ECE</small>
-                            </Link> */}
                         </li>
                     </div>
                 </li>
 
 
                 <li>
-                    <Link style={{ textDecoration: 'none' }} to="/students/enrollment" className="">
+                    <Link onClick={() => { window.location.href = "/students/enrollment" }} style={{ textDecoration: 'none' }} to="/students/enrollment" className="">
                         <span><FontAwesomeIcon icon={faUserPlus} /> Enroll A Student</span>
                     </Link>
                 </li>
 
                 <li>
-                    <Link style={{ textDecoration: 'none' }} to="/students/department" className="">
+                    <Link onClick={() => { window.location.href = "/students/department" }} style={{ textDecoration: 'none' }} to="/students/department" className="">
                         <span><FontAwesomeIcon icon={faPlus} /> Add Department</span>
                     </Link>
                 </li>
 
                 <li>
-                    <Link style={{ textDecoration: 'none' }} to="/students/admin" className="">
+                    <Link onClick={() => { window.location.href = "/students/admin" }} style={{ textDecoration: 'none' }} to="/students/admin" className="">
                         <span> <FontAwesomeIcon icon={faUserCog} /> Make Admin</span>
                     </Link>
                 </li>
-
+                <button to='/' onClick={logout} className="fixed-bottom ml-3 btn-danger mb-3 btn btn-sm">Log Out  <FontAwesomeIcon icon={faSignOutAlt} /></button>
             </ul>
 
         </div >

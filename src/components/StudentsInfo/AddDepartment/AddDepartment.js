@@ -9,6 +9,7 @@ const AddDepartment = () => {
     const [file, setFile] = useState(null);
     const [loading, setLoading] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
+    document.title = "Add Department";
 
 
 

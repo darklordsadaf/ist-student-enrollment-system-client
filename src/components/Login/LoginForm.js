@@ -2,7 +2,7 @@ import React from "react";
 
 const LoginForm = (props) => {
     const { toggleUser, validation, submit, errors } = props;
-
+    document.title = "Login";
     return (
         <div className="loginPage-form login">
             <h3 style={{ color: '#263238' }}>Login</h3>

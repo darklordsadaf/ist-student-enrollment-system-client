@@ -13,6 +13,7 @@ const StudentByDepartment = () => {
     const [dept, setDept] = useState('');
     const { department } = useParams();
     const [isAdmin, setIsAdmin] = useState(false);
+    document.title = `${department}`;
 
 
     useEffect(() => {
