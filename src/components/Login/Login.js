@@ -16,6 +16,7 @@ firebase.initializeApp(firebaseConfig);
 const Login = () => {
     const [newUser, setNewUser] = useState(false);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loading, setLoading] = useState(false);
 
     const setData = (data) => {
         localStorage.setItem('user', JSON.stringify(data));
@@ -73,7 +74,7 @@ const Login = () => {
         }
 
         if (e.target.name === "email") {
-            isFieldValid = /\S+@\S+/.test(e.target.value);
+            isFieldValid = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(e.target.value);
             if (!isFieldValid) {
                 newError[e.target.name] = "Email is not valid";
                 setErrors(newError);
@@ -175,17 +176,24 @@ const Login = () => {
 
     /* SIGN IN with email and password */
     const handleSignIn = (e) => {
+        if (currentUser.email && currentUser.password) {
+            setLoading(true);
+        }
         e.preventDefault();
         if (!currentUser.email && !currentUser.password) {
             const newError = { ...errors };
             newError.email = "Please use valid email!";
             newError.password = "Please use valid password!";
             setErrors(newError);
+            setLoading(false);
         } else {
             firebase
                 .auth()
                 .signInWithEmailAndPassword(currentUser.email, currentUser.password)
                 .then((result) => {
+                    if (result) {
+                        setLoading(false);
+                    }
                     const { displayName, email } = result.user;
                     const newUser = {
                         isSignedIn: true,
@@ -201,6 +209,9 @@ const Login = () => {
                     history.replace(from);
                 })
                 .catch((error) => {
+                    if (error) {
+                        setLoading(false);
+                    }
                     const newUser = { ...currentUser };
                     newUser.email = "";
                     newUser.error = error.message;
@@ -210,44 +221,49 @@ const Login = () => {
         }
     };
     return (
-        <section className="loginPage-signup-login text-center">
-            <Link to='/'>
-                <div className="d-flex justify-content-center mb-5">
-                    <img style={{ width: '600px', marginTop: '-90px' }} src={logo} alt="" />
+        <>
+            {
+                loading === true ? <img style={{ width: "85vh", }} className="rounded mx-auto d-block " src="https://webstockreview.net/images/gear-clipart-setting-5.gif" alt="" />
+                    : <section className="loginPage-signup-login text-center">
+                        <Link to='/'>
+                            <div className="d-flex justify-content-center mb-5">
+                                <img style={{ width: '600px', marginTop: '-90px' }} src={logo} alt="" />
 
-                </div>
-            </Link>
-            {currentUser.success && (
-                <div className="alert alert-success" role="alert">
-                    {!newUser ? "Please login first" : "User registered successfully... Now wait for admin Approval..."}
-                </div>
-            )}
-            {loggedInUser.error && (
-                <div className="alert alert-danger" role="alert">
-                    {loggedInUser.error}
-                </div>
-            )}
-            <div className="container">
-                {newUser ? (
-                    <SignUpForm
-                        toggleUser={handleFormToggle}
-                        validation={handleFormValidation}
-                        submit={handleCreateNewUser}
-                        errors={errors}
-                    ></SignUpForm>
-                ) : (
-                        <LoginForm
-                            toggleUser={handleFormToggle}
-                            validation={handleFormValidation}
-                            submit={handleSignIn}
-                            errors={errors}
-                        ></LoginForm>
-                    )}
-                <br />
+                            </div>
+                        </Link>
+                        {currentUser.success && (
+                            <div className="alert alert-success" role="alert">
+                                {!newUser ? "Please login first" : "User registered successfully... Now wait for admin Approval..."}
+                            </div>
+                        )}
+                        {loggedInUser.error && (
+                            <div className="alert alert-danger" role="alert">
+                                {loggedInUser.error}
+                            </div>
+                        )}
+                        <div className="container">
+                            {newUser ? (
+                                <SignUpForm
+                                    toggleUser={handleFormToggle}
+                                    validation={handleFormValidation}
+                                    submit={handleCreateNewUser}
+                                    errors={errors}
+                                ></SignUpForm>
+                            ) : (
+                                    <LoginForm
+                                        toggleUser={handleFormToggle}
+                                        validation={handleFormValidation}
+                                        submit={handleSignIn}
+                                        errors={errors}
+                                    ></LoginForm>
+                                )}
+                            <br />
 
 
-            </div>
-        </section>
+                        </div>
+                    </section>
+            }
+        </>
     );
 };
 

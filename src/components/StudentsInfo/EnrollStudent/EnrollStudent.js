@@ -104,30 +104,55 @@ const EnrollStudent = () => {
                                                 <form className="p-3" onSubmit={handleSubmit(onSubmit)}>
                                                     <div className="form-group">
                                                         <label for=""><b>Enter Name</b></label>
-                                                        <input type="text" ref={register({ required: true })} name="name" placeholder="Student's Name" className="form-control" />
-                                                        {errors.name && <span className="text-danger">This field is required</span>}
+                                                        <input type="text" ref={register({
+                                                            required: "Required",
+                                                            pattern: {
+                                                                value: /(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/,
+                                                                message: true
+                                                            }
+                                                        })} name="name" placeholder="Student's Name" className="form-control" />
+                                                        {errors.name && <span className="text-danger">Invalid Name</span>}
                                                     </div>
                                                     <div className="form-group row mb-1">
                                                         <div className="form-group col-6">
                                                             <label for=""><b>Enter Roll</b></label>
-                                                            <input type="number" ref={register({ required: true })} name="roll" placeholder="Student's Roll" className="form-control" />
-                                                            {errors.roll && <span className="text-danger">This field is required</span>}
+                                                            <input type="number" ref={register({
+                                                                required: "Required",
+                                                                pattern: {
+                                                                    value: /\d{4}/,
+                                                                    message: true
+                                                                }
+                                                            })} name="roll" placeholder="Student's Roll" className="form-control" />
+                                                            {errors.roll && <span className="text-danger">Invalid Roll</span>}
                                                         </div>
                                                         <div className="form-group col-6">
                                                             <label for=""><b>Enter Session</b></label>
                                                             <input type="text" ref={register({ required: true })} name="session" placeholder="Session Year" className="form-control" />
-                                                            {errors.session && <span className="text-danger">This field is required</span>}
+                                                            {errors.session && <span className="text-danger">Invalid Session</span>}
                                                         </div>
                                                     </div>
                                                     <div className="form-group">
                                                         <label for=""><b>Enter Email</b></label>
-                                                        <input type="text" ref={register({ required: true })} name="email" placeholder="Email Id" className="form-control" />
-                                                        {errors.email && <span className="text-danger">This field is required</span>}
+                                                        <input type="text" ref={register({
+                                                            required: "Required",
+                                                            pattern: {
+                                                                value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                                                message: true
+                                                            }
+                                                        })} name="email" placeholder="Email Id" className="form-control" />
+                                                        {errors.email && <span className="text-danger">Invalid Email</span>}
+
                                                     </div>
                                                     <div className="form-group">
                                                         <label for=""><b>Enter Mobile No.</b></label>
-                                                        <input type="number" ref={register({ required: true })} name="mobile" placeholder="Mobile No." className="form-control" />
-                                                        {errors.mobile && <span className="text-danger">This field is required</span>}
+                                                        <input type="number" ref={register({
+                                                            required: "Required",
+                                                            pattern: {
+                                                                value: /\d{11}/,
+                                                                message: true
+                                                            }
+                                                        })} name="mobile" placeholder="Mobile No." className="form-control" />
+                                                        {errors.mobile && <span className="text-danger">Invalid Number</span>}
                                                     </div>
                                                     <div className="form-group row">
 
