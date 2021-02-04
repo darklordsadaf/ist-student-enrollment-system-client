@@ -34,7 +34,7 @@ const AllStudentsData = ({ students, department, dept }) => {
                                         <td>{student.roll}</td>
                                         <td>{student.department}</td>
                                         <td>{student.session}</td>
-                                        <td className=""><Link to={`/students/profile/${student.department}/${student.roll}`} style={{ background: '#7AB259' }} className="btn text-white">See More</Link></td>
+                                        <td className=""><Link to={`/students/profile/${student._id}`} style={{ background: '#7AB259' }} className="btn text-white">See More</Link></td>
                                     </tr>
                                 )
                             }

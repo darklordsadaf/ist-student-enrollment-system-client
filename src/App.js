@@ -59,7 +59,7 @@ function App() {
           <Route path="/students/admin">
             <MakeAdmin />
           </Route>
-          <Route path="/students/profile/:department/:roll">
+          <Route path="/students/profile/:id">
             <StudentProfile></StudentProfile>
           </Route>
           <Route path="*">

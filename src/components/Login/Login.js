@@ -17,6 +17,9 @@ const Login = () => {
     const [newUser, setNewUser] = useState(false);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [loading, setLoading] = useState(false);
+    const history = useHistory();
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: "/" } };
 
     const setData = (data) => {
         localStorage.setItem('user', JSON.stringify(data));
@@ -37,9 +40,7 @@ const Login = () => {
         error: "",
         success: false,
     });
-    const history = useHistory();
-    const location = useLocation();
-    const { from } = location.state || { from: { pathname: "/" } };
+
 
     const handleFormToggle = () => {
         setNewUser(!newUser);
@@ -176,10 +177,10 @@ const Login = () => {
 
     /* SIGN IN with email and password */
     const handleSignIn = (e) => {
+        e.preventDefault();
         if (currentUser.email && currentUser.password) {
             setLoading(true);
         }
-        e.preventDefault();
         if (!currentUser.email && !currentUser.password) {
             const newError = { ...errors };
             newError.email = "Please use valid email!";

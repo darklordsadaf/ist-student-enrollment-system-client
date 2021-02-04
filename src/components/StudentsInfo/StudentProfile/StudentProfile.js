@@ -7,14 +7,14 @@ import UpdateStudent from '../UpdateStudent/UpdateStudent';
 import './StudentProfile.css';
 
 const StudentProfile = () => {
-    const { roll, department } = useParams();
+    const { id } = useParams();
 
     let history = useHistory();
     const [isAdmin, setIsAdmin] = useState(false);
     const [student, setStudent] = useState({});
     const [loading, setLoading] = useState(true);
     const [modalIsOpen, setIsOpen] = useState(false);
-    document.title = `${department} # ${roll}`;
+    document.title = `${id} `;
     function openModal() {
         setIsOpen(true);
     }
@@ -24,14 +24,14 @@ const StudentProfile = () => {
         setIsOpen(false);
     }
     useEffect(() => {
-        fetch(`https://enigmatic-wildwood-13681.herokuapp.com/students/${department}/${roll}`)
+        fetch(`https://enigmatic-wildwood-13681.herokuapp.com/students/${id}`)
             .then(res => res.json())
             .then(data => {
                 window.scrollTo(0, 0);
                 setStudent(data);
                 setLoading(false);
             })
-    }, [roll, department])
+    }, [id])
     const handleDelete = (id) => {
         fetch(`https://enigmatic-wildwood-13681.herokuapp.com/delete/${id}`, {
             method: 'DELETE'

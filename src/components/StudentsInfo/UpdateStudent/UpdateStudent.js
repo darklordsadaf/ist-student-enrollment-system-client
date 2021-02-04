@@ -57,7 +57,7 @@ const UpdateStudent = ({ modalIsOpen, closeModal, student }) => {
                 if (data) {
                     closeModal();
                     localStorage.removeItem("student");
-                    history.goBack()
+                    window.location.reload();
                     alert("Updated Successfully");
                 }
             })

@@ -53,13 +53,11 @@ const StudentByDepartment = () => {
                 if (roll.length > 0) {
                     setRollNF(false);
                 }
-
                 setStudents(roll);
             })
             .catch(error => {
                 console.error(error)
             })
-
 
     }
     useEffect(() => {
