@@ -9,7 +9,7 @@ const LoginForm = (props) => {
 
             <form onSubmit={submit}>
                 <div className="form-group">
-                    <input type="email" className="form-control" placeholder="Email" name="email" onBlur={validation} />
+                    <input type="email" className="form-control" placeholder="Email" name="email" onChange={validation} />
                     {errors.email.length > 0 && <p className="error-msg">{errors.email}</p>}
                 </div>
 
@@ -19,7 +19,7 @@ const LoginForm = (props) => {
                         className="form-control"
                         placeholder="Password"
                         name="password"
-                        onBlur={validation}
+                        onChange={validation}
                     />
                     {errors.password.length > 0 && <p className="error-msg">{errors.password}</p>}
                 </div>

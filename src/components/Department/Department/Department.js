@@ -69,25 +69,26 @@ const Department = () => {
     return (
         <div>
             {
-                isAdmin === true ? <section className=" container">
-                    <Link to='/'>
-                        <div className="d-flex justify-content-center ">
-                            <img style={{ width: "200px", height: "200px" }} src={logo} alt="" />
+                isAdmin === true ?
+                    <section className=" container">
+                        <Link to='/'>
+                            <div className="d-flex justify-content-center ">
+                                <img style={{ width: "200px", height: "200px" }} src={logo} alt="" />
 
-                        </div>
-                    </Link>
-                    <h2 className="text-center">All <span className="text-yellow">Department</span> </h2>
-                    <div class="department-underline mb-2"></div>
-                    {
-                        dept.length === 0 && <img className="rounded mx-auto d-block mt-4 pt-3" src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="" />
-                    }
-                    <div className="row">
-
+                            </div>
+                        </Link>
+                        <h2 className="text-center">All <span className="text-yellow">Department</span> </h2>
+                        <div class="department-underline mb-2"></div>
                         {
-                            dept.map(department => <DepartmentCard key={department._id} department={department}></DepartmentCard>)
+                            dept.length === 0 && <img className="rounded mx-auto d-block mt-4 pt-3" src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="" />
                         }
-                    </div>
-                </section>
+                        <div className="row">
+
+                            {
+                                dept.map(department => <DepartmentCard key={department._id} department={department}></DepartmentCard>)
+                            }
+                        </div>
+                    </section>
                     : <Unauthorized />
             }
 

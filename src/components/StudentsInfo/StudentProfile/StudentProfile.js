@@ -46,7 +46,7 @@ const StudentProfile = () => {
 
             })
     }
-
+    console.log(student);
     useEffect(() => {
         setIsAdmin(JSON.parse(localStorage.getItem("admin")) || {});
     }, [])

@@ -40,6 +40,7 @@ const StudentByDepartment = () => {
 
     const onSubmit = data => {
         setStudents([]);
+        // fetch('http://localhost:5000/studentsByRoll?roll=' + data.Roll)
         fetch('https://enigmatic-wildwood-13681.herokuapp.com/studentsByRoll', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
