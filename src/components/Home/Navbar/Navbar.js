@@ -62,7 +62,9 @@ const Navbar = () => {
 
                         <li className="nav-item">
                             <div style={{ margin: '9px 10px 0px 10px' }}>
-
+                                {
+                                    adminName.length === 0 && <p>Loading...</p>
+                                }
 
 
                                 {
