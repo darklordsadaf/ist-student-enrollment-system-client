@@ -38,7 +38,7 @@ const HeaderMain = () => {
                 </div>
 
             </main >
-            <p style={{ marginTop: '9vh' }} className="text-center color-yellow"><small>Copyright Sadaf {(new Date()).getFullYear()} All Rights Reserved</small></p>
+            <p style={{ marginTop: '9vh' }} className="text-center color-yellow"><small>Copyright Team BackbencherZz {(new Date()).getFullYear()} All Rights Reserved</small></p>
         </div>
     );
 };

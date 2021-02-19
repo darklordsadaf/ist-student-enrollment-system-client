@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 const customStyles = {
     content: {
-        top: '55%',
+        top: '51%',
         left: '50%',
         right: 'auto',
         bottom: 'auto',

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import logo from '../../../images/ICON/ist.png';
@@ -8,10 +8,15 @@ import './Navbar.css'
 const Navbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [adminName, setAdminName] = useState([]);
+    const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
     const logout = () => {
         localStorage.clear();
         setLoggedInUser({})
     }
+
+
+    const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
     if (loggedInUser.email) {
         fetch('https://enigmatic-wildwood-13681.herokuapp.com/adminName', {
             method: 'POST',
@@ -24,9 +29,14 @@ const Navbar = () => {
                 localStorage.setItem('adminName', JSON.stringify(data[0].name));
             })
     }
-    const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+    // useEffect(() => {
+    //     setAdminName(JSON.parse(localStorage.getItem("adminName")))
+    // }, [localStorage.getItem("adminName")])
 
-    const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
+
+
+
 
     return (
         <div >
@@ -62,16 +72,20 @@ const Navbar = () => {
 
                         <li className="nav-item">
                             <div style={{ margin: '9px 10px 0px 10px' }}>
-                                {
-                                    adminName.length === 0 && <p>Loading...</p>
-                                }
+
 
 
                                 {
-                                    loggedInUser.email && <p style={{ color: '#FB9937' }}>{
-                                        localStorage.getItem("adminName") ?
-                                            JSON.parse(localStorage.getItem("adminName")) : adminName
-                                    }</p>
+                                    loggedInUser.email && <p style={{ color: '#FB9937' }}>
+                                        {
+                                            adminName.length === 0 && <p>Loading...</p>
+
+                                        }
+                                        {
+                                            adminName
+                                        }
+
+                                    </p>
                                 }
                             </div>
                         </li>
